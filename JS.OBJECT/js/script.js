@@ -246,4 +246,142 @@
 //     }
 // };
 
+// function A() { 
+//   this.name = 'name';
+//   return;
+// }
 
+// function B() { 
+//   this.name = 'name';
+//   return;
+// }
+
+
+
+// alert( new A() == new B() ); // true
+
+// function Calculator () {
+
+//   this.read = () =>{
+//     this.a = +prompt('a',0)
+//     this.b = +prompt('b',0)
+//   }
+
+//   this.sum = () => {
+//     return this.a + this.b;
+//   }
+
+//   this.mul = () =>  {
+//     return this.a * this.b;
+//   }
+// }
+
+
+
+// let calculator = new Calculator();
+// calculator.read();
+
+
+
+
+
+// function Calculator() {
+
+//   this.read = function() {
+//     this.a = +prompt('a?', 0);
+//     this.b = +prompt('b?', 0);
+//   };
+
+//   this.sum = function() {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function() {
+//     return this.a * this.b;
+//   };
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+
+// function Accumulator(startingValue){
+//   this.value = startingValue;
+//   this.read = function() {
+//     this.value += +prompt('Сколько нужно добавить',0)
+//   };
+// }
+
+// let accumulator = new Accumulator(1); // начальное значение 1
+
+// accumulator.read(); // прибавит ввод prompt к текущему значению
+// accumulator.read(); // прибавит ввод prompt к текущему значению
+
+// alert(accumulator.value); // выведет сумму этих значений
+
+// const square = (a) => a ** 2;
+// const sumOfSquares = (a, b) => square(a) + square(b);
+// const squareSumOfSquares = (a, b) => square(sumOfSquares(a, b));
+
+
+// alert(squareSumOfSquares(0, 0));
+
+const length = (num) => num.length;
+// const toUpperCase = (str) => str.toUpperCase();
+
+// const bigLettersCount = (str) => {
+//   // BEGIN (write your solution here)
+//   let result = 0;
+//   for(let i = 0; length(str) > i; i++) {
+//     if (str[i] == toUpperCase(str[i])) {
+//       result++;
+//     }
+//   }
+//   return result;
+//   // END
+// };
+
+
+// const compare = (first, second) => {
+//   const firstCount = bigLettersCount(first);
+//   const secondCount = bigLettersCount(second);
+
+//   // BEGIN (write your solution here)
+//   if (firstCount > secondCount) {
+//     return 1;
+//   } else if (firstCount < secondCount) {
+//     return -1;
+//   } else {
+//     return 0
+//   }
+//   // END
+// };
+
+
+// BEGIN (write your solution here)
+function chekResult(str){
+  let result = 0;
+  for(let i = 0; str.length > i; i++){
+    result += +str[i];
+  }
+  return String(result);
+}
+
+function indexMultiplication(num) {
+  if (num === 0) {
+    return 0;
+  } else {
+  let result = String(num);
+    while (result >= 10){
+      result = chekResult(result);
+    }
+    return +result;
+  }
+}
+
+// END
+
+console.log(indexMultiplication(95))
